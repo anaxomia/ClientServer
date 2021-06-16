@@ -22,11 +22,11 @@ public class Client {
 
              while(active) {
 
-                 System.out.print("What you want? \n" +
-                         "0 - Register on the server \n" +
-                         "1 - Server login \n" +
-                         "2 - Send a message all clients \n" +
-                         "3 - Send a message to a client\n" +
+                 System.out.print("What do you want? \n" +
+                         "0 - Registering on the server \n" +
+                         "1 - Authorization on the server \n" +
+                         "2 - Send a message to all clients \n" +
+                         "3 - Send a message to the client\n" +
                          "4 - Get all messages\n" +
                          "9 - Exit \n ");
 
@@ -54,9 +54,9 @@ public class Client {
                          System.out.println("Please, input you name");
                          nameClient = in.next();
                          if (nameClient.isEmpty()) {
-                             System.out.println("Wrong clientname");
+                             System.out.println("Wrong client name");
                          } else{
-                             System.out.println("Please, input you password");
+                             System.out.println("Please, input your password");
                              passwordClient = in.next();
                              if (passwordClient.isEmpty()) {
                                  System.out.println("Wrong password");
