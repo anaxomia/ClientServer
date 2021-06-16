@@ -115,7 +115,7 @@ public class Server {
                    case "2":
                        if (!login){
                            server.writeLine("NOT_LOGIN");
-                           System.out.println("You aren't login");
+                           System.out.println("You aren't logged in");
                        } else {
                            message = requestArr[1];
                            for (Map.Entry<String, ServerHelper> client : clientsLoginedList.entrySet()) {
@@ -130,7 +130,7 @@ public class Server {
                    case "3":
                        if (!login){
                            server.writeLine("NOT_LOGIN");
-                           System.out.println("You aren't login");
+                           System.out.println("You aren't logged in");
                        } else if (requestArr.length < 3)
                             server.writeLine("Wrong request. Register request must have 3 words");
                        else {
@@ -147,7 +147,7 @@ public class Server {
                    case "4":
                        if (!login) {
                            server.writeLine("NOT_LOGIN");
-                           System.out.println("You aren't login");
+                           System.out.println("You aren't logged in");
                        } else {
                            List<String> messages = Processing.getMessages(thread.getName());
                            if (messages.size() < 1)
