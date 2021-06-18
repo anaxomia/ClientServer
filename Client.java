@@ -35,12 +35,12 @@ public class Client {
 
                  switch (userCommand){
                     case 0:
-                        System.out.println("Please, input you name");
+                        System.out.println("Please, input your name");
                         nameClient = in.next();
                         if (nameClient.isEmpty()) {
-                            System.out.println("Wrong clientname");
+                            System.out.println("Wrong client name");
                         } else{
-                            System.out.println("Please, input you password");
+                            System.out.println("Please, input your password");
                             passwordClient = in.next();
                             if (passwordClient.isEmpty()) {
                                 System.out.println("Wrong password");
@@ -51,7 +51,7 @@ public class Client {
                         System.out.println("=== SERVER === :" + clientHelper.readLine());
                     break;
                     case 1:
-                         System.out.println("Please, input you name");
+                         System.out.println("Please, input your name");
                          nameClient = in.next();
                          if (nameClient.isEmpty()) {
                              System.out.println("Wrong client name");
