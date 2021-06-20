@@ -9,11 +9,8 @@ public class Server {
     static ServerBase base = new ServerBase("1.base");
     private static Map<String, ServerHelper> clientsLoginedList = new HashMap<>();
 
-
     public static void main(String[] args){
-
         //base.allUnregistered();
-
         try(ServerSocket serverSocket = new ServerSocket(8000))
         {
             System.out.println("Server started!");
@@ -32,7 +29,6 @@ public class Server {
                     e.printStackTrace();
                 }
             }
-
         } catch (IOException e){
 
             throw new RuntimeException(e);
@@ -43,7 +39,6 @@ public class Server {
     }
 
     private static void dialogWithClient(ServerHelper server, Thread thread) throws IOException {
-
         boolean registered = false;
         boolean login = false;
         boolean exit = false;
@@ -71,7 +66,6 @@ public class Server {
                             if (requestArr.length < 3) {
                                 server.writeLine("BAD_REQUEST");
                                 System.out.println("Wrong request. The registration request must include 3 words");
-
                             } else {
                                 String clientName = requestArr[1];
                                 String clientPassword = requestArr[2];
