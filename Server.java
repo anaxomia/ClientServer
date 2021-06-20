@@ -92,7 +92,6 @@ public class Server {
                         else {
                             String clientName = requestArr[1];
                             String clientPassword = requestArr[2];
-
                             if (base.checkClient(clientName, clientPassword)) {
                                 System.out.println(clientName + ", you are logged in");
                                 server.writeLine("LOGIN_SUCCESS");
@@ -154,6 +153,7 @@ public class Server {
                            }
                        }
                    break;
+                        
                    case "9":
                         exit = true;
                         server.writeLine("Bye");
