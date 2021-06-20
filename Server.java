@@ -1,6 +1,5 @@
 import java.io.*;
 import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,7 +59,7 @@ public class Server {
 
             if (requestArr.length < 1) {
                 server.writeLine("BAD_REQUEST");
-                server.writeLine("Wrong request, request must have min 1 words");
+                server.writeLine("Wrong request, request must include min 1 word");
             }
             else
                 switch (requestArr[0]) {
@@ -71,7 +70,7 @@ public class Server {
                         } else {
                             if (requestArr.length < 3) {
                                 server.writeLine("BAD_REQUEST");
-                                System.out.println("Wrong request. Register request must have 3 words");
+                                System.out.println("Wrong request. The registration request must include 3 words");
 
                             } else {
                                 String clientName = requestArr[1];
@@ -90,9 +89,10 @@ public class Server {
                             }
                         }
                         break;
+                        
                     case "1":
                         if (requestArr.length < 3){
-                            System.out.println("Wrong request. Register request must have 3 words");
+                            System.out.println("Wrong request. The registration request must include 3 words");
                             server.writeLine("BAD_REQUEST");
                         }
                         else {
@@ -100,7 +100,7 @@ public class Server {
                             String clientPassword = requestArr[2];
 
                             if (base.checkClient(clientName, clientPassword)) {
-                                System.out.println(clientName + ", you are login");
+                                System.out.println(clientName + ", you are logged in");
                                 server.writeLine("LOGIN_SUCCESS");
                                 login = true;
                                 clientsLoginedList.put(clientName, server);
@@ -132,7 +132,7 @@ public class Server {
                            server.writeLine("NOT_LOGIN");
                            System.out.println("You aren't logged in");
                        } else if (requestArr.length < 3)
-                            server.writeLine("Wrong request. Register request must have 3 words");
+                            server.writeLine("Wrong request. The registration request must include 3 words");
                        else {
                             toClient = requestArr[1];
                             message = requestArr[2];
@@ -170,5 +170,4 @@ public class Server {
                 }
         }
     }
-
 }
